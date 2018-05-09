@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//StartGin запуск http-сервера
-func StartGin() {
+//Start запуск http-сервера
+func Start() {
 	router := gin.Default()
 	router.Static("/static", "./static")
 	router.LoadHTMLGlob("./static/templates/*")

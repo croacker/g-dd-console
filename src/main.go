@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	httpserver.StartGin()
+	httpserver.Start()
 }
