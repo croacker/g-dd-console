@@ -48,7 +48,8 @@ class NodesTable extends React.Component {
         };
         var location = window.location;
         var listUrl = location.origin + '/' + location.pathname.split('/')[1] + DdApi.LIST_NODES;
-        this.requestListOfServers(listUrl);
+        // this.requestListOfServers(listUrl);
+        this.requestKsedConfig();
     }
 
     /**
@@ -167,6 +168,18 @@ class NodesTable extends React.Component {
      * Запрос списка узлов.
      * @param {} listUrl - url для запроса
      */
+    requestKsedConfig() {
+        try {
+            this.doRequestKsedConfig();
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    /**
+     * Запрос списка узлов.
+     * @param {} listUrl - url для запроса
+     */
     requestListOfServers(listUrl) {
         try {
             this.doRequestListOfServers(listUrl);
@@ -185,6 +198,31 @@ class NodesTable extends React.Component {
         } catch (e) {
             console.error(e);
         }
+    }
+
+    /**
+     * Выполнить запрос списка узлов.
+     * @param {} listUrl - url для запроса
+     */
+    doRequestKsedConfig() {
+        var me = this;
+        var XHR = window.XDomainRequest || window.XMLHttpRequest
+        var xhr = new XHR();
+        xhr.open('GET', '/api/ksed-config', true);
+        xhr.onload = function () {
+            console.log('Response text: ' + xhr.responseText);
+            var ksedConfig = JSON.parse(xhr.responseText).ksedconfig;
+            console.log(ksedConfig);
+            var listUrl = ksedConfig.Addr + DdApi.LIST_NODES; 
+            console.log("listUrl:" + listUrl);
+            me.requestListOfServers(listUrl);
+        }
+
+        xhr.onerror = function () {
+            console.error('Requeest ' + listUrl + ' Error')
+        }
+
+        xhr.send();
     }
 
     /**
