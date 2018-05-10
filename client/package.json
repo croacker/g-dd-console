@@ -1,0 +1,34 @@
+{
+  "name": "r-dd-console",
+  "version": "1.0.0",
+  "description": "DD console",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --display-error-details"
+  },
+  "author": "croacker",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "material-ui": "^0.20.0",
+    "prop-types": "^15.6.0",
+    "react": "16.2.0",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.2.0",
+    "react-tap-event-plugin": "^3.0.2",
+    "react-upload-file": "^2.0.0-beta.6",
+    "webpack": "^2.7.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17"
+  }
+}

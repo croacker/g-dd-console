@@ -1,0 +1,24 @@
+body {
+  padding-top: 10px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.btn .glyphicon {
+  margin-right: 8px;
+}
+
+.btn.btn-icon .glyphicon {
+  margin-right: 0;
+}
+
+.nodesRow th svg{
+  fill: #7AB800 !important; 
+}
+
+.nodesRow td svg{
+  fill: #7AB800 !important; 
+}
